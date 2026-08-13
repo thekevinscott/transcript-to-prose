@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transcript to prose</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Transcript &rarr; prose</h1>
+  <div class="head-right">
+    <span id="status" class="status">idle</span>
+    <button id="run" title="Run now (Cmd+Enter)">Run</button>
+  </div>
+</header>
+
+<main>
+  <section class="col" id="col-input">
+    <div class="col-head">
+      <h2>Transcript</h2>
+      <span class="meta" id="wordcount">0 words</span>
+      <button class="ghost" id="clear">Clear</button>
+    </div>
+    <textarea id="transcript" placeholder="Start dictating (Fn Fn on macOS), or paste a transcript here." spellcheck="false"></textarea>
+  </section>
+
+  <section class="col" id="col-output">
+    <!-- panels render here from /api/config -->
+  </section>
+</main>
+
+<footer id="controls"></footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
