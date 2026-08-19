@@ -41,8 +41,8 @@ CONTROLS = [
         "default": 2,
         "panels": ["prose"],
         "scale": [
-            {"label": "Terse", "directive": "Cut hard. Aim for roughly a third of the transcript's length. Keep only what carries meaning."},
-            {"label": "Compact", "directive": "Tighten noticeably. Aim for about half the transcript's length."},
+            {"label": "Terse", "directive": "Compress hard, to roughly a third of the transcript's length. Condense every part of it; do not achieve the length by dropping whole sections."},
+            {"label": "Compact", "directive": "Tighten noticeably, to about half the transcript's length. Condense throughout rather than cutting whole sections."},
             {"label": "Balanced", "directive": "Keep roughly the transcript's length. Trim filler, don't cut substance."},
             {"label": "Expansive", "directive": "Let ideas breathe. Longer sentences and fuller transitions are fine; you may exceed the transcript's length."},
             {"label": "Thorough", "directive": "Develop each point fully, spelling out implications the speaker gestured at. Expect to run well past the transcript's length."},
@@ -119,6 +119,8 @@ PANELS = [
             "produce what the speaker would have written if they had been "
             "writing instead of talking.\n\n"
             "Rules that always hold:\n"
+            "- Cover the whole transcript, from its first point to its last. Shortening means "
+            "condensing every part, never dropping passages wholesale or starting partway in.\n"
             "- Never invent facts, names, numbers, or claims the speaker did not make.\n"
             "- Never add a conclusion, summary, or call to action they did not say.\n"
             "- If a passage is garbled beyond repair, render your best reading of it rather than dropping it.\n"

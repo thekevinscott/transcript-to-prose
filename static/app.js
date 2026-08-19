@@ -102,9 +102,11 @@ function clearPanel(id, message) {
 function appendDelta(id, text) {
   const p = panelEls[id];
   if (!p) return;
-  if (p.root.dataset.raw === undefined || p.body.querySelector(".placeholder")) {
+  if (p.pending) {
+    // First delta of this run: drop whatever the previous run left behind.
     p.body.textContent = "";
     p.root.dataset.raw = "";
+    p.pending = false;
   }
   p.root.dataset.raw += text;
   p.body.textContent = p.root.dataset.raw;
@@ -135,6 +137,8 @@ function finishPanel(id, event) {
     p.root.dataset.raw = text;
     p.body.innerHTML = text.trim() ? renderProse(text) : `<span class="placeholder">nothing returned</span>`;
   }
+  p.pending = false;
+  p.body.scrollTop = 0; // streaming leaves the body scrolled to the bottom
   setPanelState(id, "done");
 }
 
@@ -324,6 +328,7 @@ async function run(force) {
 function handleEvent(event, onPaint) {
   switch (event.type) {
     case "start":
+      if (panelEls[event.panel]) panelEls[event.panel].pending = true;
       setPanelState(event.panel, "working");
       break;
     case "delta":
